@@ -58,7 +58,7 @@ export default function HowItWorks() {
         isZoomed
         width={'100%'}
         radius="none"
-        src="/bristell-energic-index-cover.jpg"
+        src="/bristell-energic-index-cover.webp"
         alt="Red aircraft in hangar"
         classNames={{
           wrapper: "w-full h-full z-0",

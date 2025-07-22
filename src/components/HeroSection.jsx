@@ -154,12 +154,12 @@ const HeroSection = () => {
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-white/90 dark:from-gray-800/90 to-transparent" />
             
             <img
-              src="/calendar.png"
+              src="/calendar.webp"
               alt="Calendar"
               className="absolute inset-0 w-full h-full object-fill dark:hidden"
             />
             <img
-              src="/calendar-dark.png"
+              src="/calendar-dark.webp"
               alt="Calendar"
               className="absolute inset-0 w-full h-full object-fill hidden dark:block"
             />
