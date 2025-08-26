@@ -12,6 +12,7 @@ const CalendarViewRenderer = ({
   events, 
   onDayClick, 
   onEventClick,
+  onEventUpdate,
   filters 
 }) => {
   const viewProps = {
@@ -19,6 +20,7 @@ const CalendarViewRenderer = ({
     events,
     onDayClick,
     onEventClick,
+    onEventUpdate,
     filters
   };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, useNavigate, Routes } from "react-router-dom";
 import { HeroUIProvider } from "@heroui/react";
+import { ToastProvider } from "@heroui/toast";
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import MainMenu from './components/MainMenu';
 import HeroSection from './components/HeroSection';
@@ -74,6 +75,7 @@ function AppContent() {
 export default function App() {
   return (
     <HeroUIProvider>
+      <ToastProvider />
       <NextThemesProvider attribute="class" defaultTheme="light">
         <AppContent />
       </NextThemesProvider>

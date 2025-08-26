@@ -50,13 +50,35 @@ const safeParseDateValue = (dateString) => {
   }
 };
 
-const CreateEventModal = ({ isOpen, onClose, selectedDate, onCreateEvent }) => {
+const CreateEventModal = ({ isOpen, onClose, selectedDate, selectedTime, onCreateEvent }) => {
+  // Форматування часу з об'єкта selectedTime в формат HH:MM
+  const formatSelectedTime = () => {
+    if (selectedTime && typeof selectedTime.hour === 'number') {
+      const hour = String(selectedTime.hour).padStart(2, '0');
+      const minute = String(selectedTime.minute || 0).padStart(2, '0');
+      return `${hour}:${minute}`;
+    }
+    return "";
+  };
+  
+  // Розрахунок часу закінчення події (за замовчуванням +1 година)
+  const calculateEndTime = () => {
+    if (selectedTime && typeof selectedTime.hour === 'number') {
+      let endHour = selectedTime.hour + 1;
+      if (endHour >= 24) endHour = 23;
+      const hour = String(endHour).padStart(2, '0');
+      const minute = String(selectedTime.minute || 0).padStart(2, '0');
+      return `${hour}:${minute}`;
+    }
+    return "";
+  };
+
   const [newEvent, setNewEvent] = React.useState({
     organization: "JetSuite",
     startDate: selectedDate ? selectedDate.toISOString().split("T")[0] : new Date().toISOString().split("T")[0],
-    startTime: "",
+    startTime: formatSelectedTime(),
     endDate: selectedDate ? selectedDate.toISOString().split("T")[0] : new Date().toISOString().split("T")[0],
-    endTime: "",
+    endTime: calculateEndTime(),
     location: "",
     eventType: "regular",
     pilot: "",
@@ -258,6 +280,8 @@ const CreateEventModal = ({ isOpen, onClose, selectedDate, onCreateEvent }) => {
                 <div className="space-y-2">
                   <DatePicker
                     label="Start Date"
+                    labelPlacement="outside"
+                    
                     value={safeParseDateValue(newEvent.startDate)}
                     onChange={(date) => {
                       if (date) {
