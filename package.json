@@ -10,9 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroui/react": "^2.8.2",
+    "@heroui/react": "^2.7.9",
     "@heroui/theme": "^2.4.20",
-    "@heroui/toast": "^2.0.14",
     "@internationalized/date": "^3.8.1",
     "@react-aria/grid": "^3.14.0",
     "@react-aria/i18n": "^3.12.9",

@@ -9,7 +9,6 @@ import {
   Breadcrumbs,
   BreadcrumbItem,
 } from "@heroui/react";
-import { addToast } from "@heroui/toast";
 
 import {
   ChevronLeft,
@@ -574,24 +573,8 @@ export default function CalendarPage() {
       )
     );
     
-    // Show success toast notification
-    const startTime = updatedEvent.start.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
-    });
-    const endTime = updatedEvent.end.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
-    });
-    
-    addToast({
-      title: "Event Updated Successfully",
-      description: `${updatedEvent.pilot || 'Event'} moved to ${updatedEvent.aircraft} (${startTime} - ${endTime})`,
-      color: "success",
-      duration: 4000,
-    });
+    // Event updated successfully
+    console.log('Event updated:', updatedEvent.id);
   };
 
   // Sync currentView with URL parameter
