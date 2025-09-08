@@ -25,6 +25,7 @@ import AircraftDetailsPage from './pages/AircraftDetailsPage';
 import WeightBalancePage from './pages/WeightBalancePage';
 import WeightBalanceEnvelopePage from './pages/WeightBalanceEnvelopePage';
 import ManifestBuilder from './components/manifest-builder';
+import SearchPage from './pages/SearchPage';
 
 function HomePage() {
   return (
@@ -65,6 +66,7 @@ function AppContent() {
           <Route path="/weight-balance/:id" element={<WeightBalancePage />} />
           <Route path="/weight-balance-envelope/:id" element={<WeightBalanceEnvelopePage />} />
           <Route path="/manifest-builder/:id" element={<ManifestBuilder />} />
+          <Route path="/search" element={<SearchPage />} />
 
       </Routes>
     </>

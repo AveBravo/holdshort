@@ -41,6 +41,7 @@ import {
   Plane,
   LayoutList,
   ChevronDown,
+  Search,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Link as RouterLink } from "react-router-dom";
@@ -96,6 +97,12 @@ export default function MainMenu({ onNavigate }) {
           <RouterLink color="foreground" to="/dashboard">
             <LayoutDashboard className="w-4 h-4 mr-2" />
             Dashboard
+          </RouterLink>
+        </NavbarItem>
+        <NavbarItem>
+          <RouterLink color="foreground" to="/search">
+            <Search className="w-4 h-4 mr-2" />
+            Search
           </RouterLink>
         </NavbarItem>
         <NavbarItem>
@@ -299,6 +306,16 @@ export default function MainMenu({ onNavigate }) {
             startContent={<PlusCircle className="w-4 h-4" />}
           >
             Add Event
+          </Button>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Button
+            variant="light"
+            fullWidth
+            startContent={<Search className="w-4 h-4" />}
+            onPress={() => onNavigate("/search")}
+          >
+            Search
           </Button>
         </NavbarMenuItem>
         <NavbarMenuItem>
